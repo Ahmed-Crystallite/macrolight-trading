@@ -45,7 +45,7 @@ const routesConfig = [
     isPublic: true,
   },
   {
-    path: "dashboard",
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
@@ -55,23 +55,23 @@ const routesConfig = [
       },
       {
         path: "trade-list",
-        element: <div>trade-lis Page</div>,
+        element: <div>Trade List Page</div>,
       },
       {
         path: "templates",
-        element: <div>templates Page</div>,
+        element: <div>Templates Page</div>,
       },
       {
         path: "backtest-status",
-        element: <div>backtest-status Page</div>,
+        element: <div>Backtest Status Page</div>,
       },
       {
         path: "results",
-        element: <div>Results</div>,
+        element: <div>Results Page</div>,
       },
       {
         path: "strategy-builder",
-        element: <div>Strategy Builder</div>,
+        element: <div>Strategy Builder Page</div>,
       },
       {
         path: "report",
@@ -107,28 +107,21 @@ const routesConfig = [
   },
 ]
 
+// Recursive function to handle nested routes
+const renderRoutes = (routes) => {
+  return routes.map((route) => {
+    const { path, element, children, index } = route
+    return (
+      <Route key={path} path={path} index={index} element={element}>
+        {children && renderRoutes(children)}
+      </Route>
+    )
+  })
+}
 const Routers = () => {
   return (
     <Router>
-      <Routes>
-        {routesConfig.map((route) =>
-          route.isPublic ? (
-            <Route key={route.path} path={route.path} element={route.element} />
-          ) : (
-            <Route key={route.path} path={route.path} element={route.element}>
-              {route.children &&
-                route.children.map((e) => (
-                  <Route
-                    key={e.path}
-                    path={e.path}
-                    index={e.index}
-                    element={e.element}
-                  />
-                ))}
-            </Route>
-          )
-        )}
-      </Routes>
+      <Routes>{renderRoutes(routesConfig)}</Routes>
     </Router>
   )
 }

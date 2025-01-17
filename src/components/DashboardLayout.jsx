@@ -179,11 +179,8 @@ export default function DashboardLayout() {
                         className="h-72 w-[380px] rounded-none bg-[#2E353A] hover:!bg-[#2E353A] hover:shadow-none"
                       >
                         {notifications.map((notification, i) => (
-                          <>
-                            <div
-                              key={i}
-                              className="flex gap-x-3 items-start py-3 px-3"
-                            >
+                          <div key={i}>
+                            <div className="flex gap-x-3 items-start py-3 px-3">
                               <div className="bg-[#41B0FF20] w-[60px] h-[57px] flex items-center px-4 rounded-[10px]">
                                 <img src={BellIconBlue} alt="icon" />
                               </div>
@@ -197,7 +194,7 @@ export default function DashboardLayout() {
                               </div>
                             </div>
                             <Separator className="my-2 bg-[#A3A4B250]" />
-                          </>
+                          </div>
                         ))}
                       </ScrollArea>
                     </DropdownMenuItem>
