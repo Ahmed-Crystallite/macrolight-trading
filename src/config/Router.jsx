@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"
 
 // Pages
-import { ForgotPassword, Login, NotFound, Signup } from "@/pages"
+import { Dashboard, ForgotPassword, Login, NotFound, Signup } from "@/pages"
 
 // Components
 import { DashboardLayout } from "@/components"
@@ -35,47 +35,37 @@ const routesConfig = [
     isPublic: true,
   },
   {
-    path: "/terms-and-conditions",
-    element: <div>TermsAndConditions Page</div>,
-    isPublic: true,
-  },
-  {
-    path: "/privacy-policy",
-    element: <div>PrivacyPolicy Page</div>,
-    isPublic: true,
-  },
-  {
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
         path: "",
         index: true,
-        element: <div>Dashboard Page</div>,
+        element: <Dashboard />,
       },
       {
         path: "trade-list",
-        element: <div>Trade List Page</div>,
+        element: <div className="container">Trade List Page</div>,
       },
       {
         path: "templates",
-        element: <div>Templates Page</div>,
+        element: <div className="container">Templates Page</div>,
       },
       {
         path: "backtest-status",
-        element: <div>Backtest Status Page</div>,
+        element: <div className="container">Backtest Status Page</div>,
       },
       {
         path: "results",
-        element: <div>Results Page</div>,
+        element: <div className="container">Results Page</div>,
       },
       {
         path: "strategy-builder",
-        element: <div>Strategy Builder Page</div>,
+        element: <div className="container">Strategy Builder Page</div>,
       },
       {
         path: "report",
-        element: <div>Report Page</div>,
+        element: <div className="container">Report Page</div>,
       },
       {
         path: "settings",
@@ -83,21 +73,29 @@ const routesConfig = [
           {
             path: "",
             index: true,
-            element: <div>Setting Page</div>,
+            element: <div className="container">Setting Page</div>,
           },
           {
             path: "profile",
-            element: <div>Profile Page</div>,
+            element: <div className="container">Profile Page</div>,
           },
           {
             path: "post",
-            element: <div>Post Job Page</div>,
+            element: <div className="container">Post Job Page</div>,
           },
           {
             path: "single",
-            element: <div>Job Details Page</div>,
+            element: <div className="container">Job Details Page</div>,
           },
         ],
+      },
+      {
+        path: "terms-and-conditions",
+        element: <div className="container">TermsAndConditions Page</div>,
+      },
+      {
+        path: "privacy-policy",
+        element: <div className="container">PrivacyPolicy Page</div>,
       },
     ],
   },

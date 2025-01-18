@@ -6,14 +6,18 @@ const Table = React.forwardRef(({ className, ...props }, ref) => (
   <div className="relative w-full overflow-auto">
     <table
       ref={ref}
-      className={cn("w-full caption-bottom text-sm", className)}
-      {...props} />
+      className={cn(
+        "w-full caption-bottom text-xs font-medium leading-tight",
+        className
+      )}
+      {...props}
+    />
   </div>
 ))
 Table.displayName = "Table"
 
 const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
-  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+  <thead ref={ref} className={cn(className)} {...props} />
 ))
 TableHeader.displayName = "TableHeader"
 
@@ -21,7 +25,8 @@ const TableBody = React.forwardRef(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
     className={cn("[&_tr:last-child]:border-0", className)}
-    {...props} />
+    {...props}
+  />
 ))
 TableBody.displayName = "TableBody"
 
@@ -32,7 +37,8 @@ const TableFooter = React.forwardRef(({ className, ...props }, ref) => (
       "border-t bg-neutral-100/50 font-medium [&>tr]:last:border-b-0 dark:bg-neutral-800/50",
       className
     )}
-    {...props} />
+    {...props}
+  />
 ))
 TableFooter.displayName = "TableFooter"
 
@@ -40,10 +46,11 @@ const TableRow = React.forwardRef(({ className, ...props }, ref) => (
   <tr
     ref={ref}
     className={cn(
-      "border-b transition-colors hover:bg-neutral-100/50 data-[state=selected]:bg-neutral-100 dark:hover:bg-neutral-800/50 dark:data-[state=selected]:bg-neutral-800",
+      "transition-colors data-[state=selected]:bg-neutral-100 py-[10px] dark:hover:bg-neutral-800/50 dark:data-[state=selected]:bg-neutral-800",
       className
     )}
-    {...props} />
+    {...props}
+  />
 ))
 TableRow.displayName = "TableRow"
 
@@ -51,10 +58,11 @@ const TableHead = React.forwardRef(({ className, ...props }, ref) => (
   <th
     ref={ref}
     className={cn(
-      "h-10 px-2 text-left align-middle font-medium text-neutral-500 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] dark:text-neutral-400",
+      "h-10 px-2 text-left align-middle text-white text-xs font-bold leading-tight [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] dark:text-neutral-400",
       className
     )}
-    {...props} />
+    {...props}
+  />
 ))
 TableHead.displayName = "TableHead"
 
@@ -65,15 +73,20 @@ const TableCell = React.forwardRef(({ className, ...props }, ref) => (
       "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
-    {...props} />
+    {...props}
+  />
 ))
 TableCell.displayName = "TableCell"
 
 const TableCaption = React.forwardRef(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-sm text-neutral-500 dark:text-neutral-400", className)}
-    {...props} />
+    className={cn(
+      "mt-4 text-xs text-neutral-500 dark:text-neutral-400",
+      className
+    )}
+    {...props}
+  />
 ))
 TableCaption.displayName = "TableCaption"
 

@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #E3E7E930;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0077CC;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   :root {
     --radius: 0.5rem;
   }

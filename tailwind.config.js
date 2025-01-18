@@ -22,6 +22,7 @@ module.exports = {
         lg: "992px",
         xl: "1200px",
         "2xl": "1400px",
+        "3xl": "1600px",
       },
       fontFamily: {
         sans: ["Inter-Regular", "sans-serif"],
