@@ -1,8 +1,7 @@
 // Config Router
 import Routers from "./config/Router"
 
-
-function App() {
+const App = () => {
   return <Routers />
 }
 

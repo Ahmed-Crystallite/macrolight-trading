@@ -15,6 +15,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -41,6 +42,12 @@ import {
 } from "./Table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs"
 import { Avatar, AvatarFallback, AvatarImage } from "./Avatar"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./Tooltip"
 export {
   Input,
   Checkbox,
@@ -56,6 +63,7 @@ export {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -82,4 +90,8 @@ export {
   Avatar,
   AvatarFallback,
   AvatarImage,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 }
