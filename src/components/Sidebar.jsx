@@ -18,11 +18,6 @@ import Icon5Active from "media/dashboard/icons/5_blue.svg"
 import Icon6 from "media/dashboard/icons/6.svg"
 import Icon6Active from "media/dashboard/icons/6_blue.svg"
 export default function Sidebar() {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
-
-  const toggleSidebar = () => {
-    setIsSidebarCollapsed(!isSidebarCollapsed)
-  }
   const links = [
     {
       href: "/dashboard",
@@ -75,10 +70,11 @@ export default function Sidebar() {
                 <NavLink
                   title={text}
                   to={href}
+                  end
                   className={({ isActive }) =>
                     `flex gap-x-3 group items-center xl:text-lg text-base font-medium sm:px-5 capitalize mb-1 sm:h-[70px] h-[40px] px-[6px] hover:bg-black hover:rounded-xl transition-all ease-in-out duration-300 ${
                       isActive
-                        ? "text-primary  rounded-[12px] bg-black w-[99%] m-auto"
+                        ? "text-primary rounded-[12px] bg-black w-[99%] m-auto"
                         : "text-white/65"
                     }`
                   }

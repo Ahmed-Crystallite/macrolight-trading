@@ -7,7 +7,18 @@ import {
 } from "react-router-dom"
 
 // Pages
-import { Dashboard, ForgotPassword, Login, NotFound, Signup } from "@/pages"
+import {
+  BacktestStatus,
+  Dashboard,
+  ForgotPassword,
+  Login,
+  NotFound,
+  Results,
+  Signup,
+  StrategyBuilder,
+  Templates,
+  TradeList,
+} from "@/pages"
 
 // Components
 import { DashboardLayout } from "@/components"
@@ -45,23 +56,23 @@ const routesConfig = [
       },
       {
         path: "trade-list",
-        element: <div className="container">Trade List Page</div>,
+        element: <TradeList />,
       },
       {
         path: "templates",
-        element: <div className="container">Templates Page</div>,
+        element: <Templates />,
       },
       {
         path: "backtest-status",
-        element: <div className="container">Backtest Status Page</div>,
+        element: <BacktestStatus />,
       },
       {
         path: "results",
-        element: <div className="container">Results Page</div>,
+        element: <Results />,
       },
       {
         path: "strategy-builder",
-        element: <div className="container">Strategy Builder Page</div>,
+        element: <StrategyBuilder />,
       },
       {
         path: "report",
@@ -73,29 +84,47 @@ const routesConfig = [
           {
             path: "",
             index: true,
-            element: <div className="container">Setting Page</div>,
-          },
-          {
-            path: "profile",
             element: <div className="container">Profile Page</div>,
           },
           {
-            path: "post",
-            element: <div className="container">Post Job Page</div>,
+            path: "preferences",
+            element: <div className="container">Preferences Page</div>,
           },
           {
-            path: "single",
-            element: <div className="container">Job Details Page</div>,
+            path: "security",
+            element: <div className="container">Security Page</div>,
+          },
+          {
+            path: "payment-method",
+            element: <div className="container">Payment Method Page</div>,
           },
         ],
       },
       {
-        path: "terms-and-conditions",
-        element: <div className="container">TermsAndConditions Page</div>,
-      },
-      {
-        path: "privacy-policy",
-        element: <div className="container">PrivacyPolicy Page</div>,
+        path: "policies",
+        children: [
+          {
+            path: "",
+            index: true,
+            element: <div className="container">Setting Page</div>,
+          },
+          {
+            path: "terms-and-conditions",
+            element: <div className="container">TermsAndConditions Page</div>,
+          },
+          {
+            path: "privacy-policy",
+            element: <div className="container">PrivacyPolicy Page</div>,
+          },
+          {
+            path: "disclaimer",
+            element: <div className="container">Disclaimer Page</div>,
+          },
+          {
+            path: "cookie-policy",
+            element: <div className="container">CookiePolicy Page</div>,
+          },
+        ],
       },
     ],
   },
