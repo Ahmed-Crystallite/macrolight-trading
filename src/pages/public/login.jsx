@@ -1,7 +1,7 @@
 // React
 import { useState } from "react"
 // React Router Dom
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 // Components
 import { Button, Checkbox, Input, Label } from "@/components/ui/cnIndex"
 // Icons
@@ -12,6 +12,12 @@ import Logo from "media/logo.svg"
 
 export default function Login() {
   const [passwordType, setPasswordType] = useState("password")
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    navigate("/dashboard")
+  }
 
   const handlePasswordType = () => {
     setPasswordType(passwordType === "password" ? "text" : "password")
@@ -57,7 +63,7 @@ export default function Login() {
                   Start managing your finance faster and better
                 </p>
                 <form
-                  action=""
+                  onSubmit={handleSubmit}
                   className="lg:mt-10 mt-6 grid grid-cols-1 gap-y-6"
                 >
                   <div className="flex items-center gap-x-2 bg-[#52585C40] border border-[#A4A9AD] px-4 py-1.5 rounded-[8px]">
