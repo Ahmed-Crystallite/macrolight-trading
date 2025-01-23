@@ -12,6 +12,11 @@ import Profile from "./dashboard/settings/profile"
 import Preferences from "./dashboard/settings/preferences"
 import Security from "./dashboard/settings/security"
 import PaymentMethod from "./dashboard/settings/payment-method"
+import Policies from "./dashboard/policies-center/policies"
+import PrivacyPolicy from "./dashboard/policies-center/privacy-policy"
+import TermsOfService from "./dashboard/policies-center/terms-of-service"
+import Disclaimer from "./dashboard/policies-center/disclaimer"
+import CookiePolicy from "./dashboard/policies-center/cookie-policy"
 
 export {
   Login,
@@ -28,4 +33,9 @@ export {
   Preferences,
   Security,
   PaymentMethod,
+  Policies,
+  PrivacyPolicy,
+  TermsOfService,
+  Disclaimer,
+  CookiePolicy,
 }

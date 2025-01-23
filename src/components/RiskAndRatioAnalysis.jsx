@@ -15,25 +15,25 @@ const RiskAndRatioAnalysis = () => {
     {
       title: "Max Dropdown",
       value: "-15.34%",
-      valueColor: "#FF283F",
+      valueColor: "text-[#FF283F]",
       tooltipText: "Lorem ipsum dolor sit amet lectus consectetur malesuada.",
     },
     {
       title: "Winning Trades%",
       value: "63.45%",
-      valueColor: "#B0DB39",
+      valueColor: "text-[#B0DB39]",
       tooltipText: "Lorem ipsum dolor sit amet lectus consectetur malesuada.",
     },
     {
       title: "Avg. Profit Per Trade",
       value: "2.45%",
-      valueColor: "#B0DB39",
+      valueColor: "text-[#B0DB39]",
       tooltipText: "Lorem ipsum dolor sit amet lectus consectetur malesuada.",
     },
     {
       title: "Risk/Reward Ratio",
       value: "1:3.5",
-      valueColor: "#B0DB39",
+      valueColor: "text-[#B0DB39]",
       tooltipText: "Lorem ipsum dolor sit amet lectus consectetur malesuada.",
     },
   ]
@@ -74,7 +74,7 @@ const RiskAndRatioAnalysis = () => {
                 </TooltipProvider>
               </div>
               <h5
-                className={`text-[32px] font-semibold leading-tight text-[${item.valueColor}]`}
+                className={`text-[32px] font-semibold leading-tight ${item.valueColor}`}
               >
                 {item.value}
               </h5>

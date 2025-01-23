@@ -9,18 +9,23 @@ import {
 // Pages
 import {
   BacktestStatus,
+  CookiePolicy,
   Dashboard,
+  Disclaimer,
   ForgotPassword,
   Login,
   NotFound,
   PaymentMethod,
+  Policies,
   Preferences,
+  PrivacyPolicy,
   Profile,
   Results,
   Security,
   Signup,
   StrategyBuilder,
   Templates,
+  TermsOfService,
   TradeList,
 } from "@/pages"
 
@@ -86,6 +91,7 @@ const routesConfig = [
         path: "settings",
         children: [
           {
+            path: "",
             index: true,
             element: <Navigate to="profile" replace />,
           },
@@ -113,23 +119,23 @@ const routesConfig = [
           {
             path: "",
             index: true,
-            element: <div className="container">Setting Page</div>,
+            element: <Policies />,
           },
           {
             path: "terms-and-conditions",
-            element: <div className="container">TermsAndConditions Page</div>,
+            element: <TermsOfService />,
           },
           {
             path: "privacy-policy",
-            element: <div className="container">PrivacyPolicy Page</div>,
+            element: <PrivacyPolicy />,
           },
           {
             path: "disclaimer",
-            element: <div className="container">Disclaimer Page</div>,
+            element: <Disclaimer />,
           },
           {
             path: "cookie-policy",
-            element: <div className="container">CookiePolicy Page</div>,
+            element: <CookiePolicy />,
           },
         ],
       },

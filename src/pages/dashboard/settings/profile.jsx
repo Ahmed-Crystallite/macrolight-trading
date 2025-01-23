@@ -51,7 +51,10 @@ export default function Profile() {
               </div>
             </div>
             <div className="flex items-center justify-end mt-5">
-              <Button className="text-[14px] leading-tight bg-primary w-[137px] h-[34px] rounded-full hover:bg-primary/80">
+              <Button
+                type="button"
+                className="text-[14px] leading-tight bg-primary w-[137px] h-[34px] rounded-full hover:bg-primary/80"
+              >
                 Save
               </Button>
             </div>
