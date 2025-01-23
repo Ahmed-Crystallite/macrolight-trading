@@ -17,7 +17,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui"
+} from "@/components/ui/cnIndex"
 import GraphUp from "media/dashboard/graph_up.svg"
 import GraphDown from "media/dashboard/graph_down.svg"
 import { Info, Trash2 } from "lucide-react"

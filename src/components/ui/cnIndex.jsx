@@ -48,6 +48,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./Tooltip"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./Select"
+import { Popover, PopoverContent, PopoverTrigger } from "./Popover"
+import { Calendar } from "./Calendar"
 export {
   Input,
   Checkbox,
@@ -94,4 +103,13 @@ export {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Calendar,
 }

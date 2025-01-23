@@ -17,7 +17,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui"
+} from "@/components/ui/cnIndex"
 import GraphUp from "media/dashboard/graph_up.svg"
 import GraphDown from "media/dashboard/graph_down.svg"
 import { Info, Trash2 } from "lucide-react"
@@ -59,9 +59,7 @@ export default function Results() {
     <div className="py-[20px] h-screen">
       <div className="sm:px-[30px] px-[15px]">
         <div className="pb-3">
-          <h1 className="text-[26px] leading-tight font-semibold">
-          Results
-          </h1>
+          <h1 className="text-[26px] leading-tight font-semibold">Results</h1>
         </div>
         <div className="bg-[#2E353A] py-[15px] px-[15px] rounded-[10px] h-full">
           <Table size="3">
@@ -75,7 +73,7 @@ export default function Results() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {initialData.map((item, i) => (
+              {data.map((item, i) => (
                 <TableRow key={i} className="bg-[#52585C80] hover:bg-[#52585C]">
                   <TableCell className="py-[15px]">{item.market}</TableCell>
                   <TableCell className="py-[15px]">{item.change}</TableCell>

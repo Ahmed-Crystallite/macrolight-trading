@@ -18,7 +18,7 @@ import {
   ScrollArea,
   Separator,
   Switch,
-} from "./ui"
+} from "./ui/cnIndex"
 // Media
 import DiscordIcon from "media/dashboard/icons/discord.svg"
 import TwitterIcon from "media/dashboard/icons/twitter.svg"
@@ -66,99 +66,105 @@ export default function Topbar() {
               </Link>
             </div>
             <div className="lg:ps-8 flex gap-x-8">
-            <DropdownMenu className="bg-[#2E353A]">
-              <DropdownMenuTrigger className="relative focus-visible:ring-0">
-                <img src={BellIcon} alt="icon" />
-                <span className="bg-red-600 w-6 h-5 absolute block rounded-xl -top-2 -right-2 z-10 text-white text-sm font-medium">
-                  2
-                </span>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="p-0 bg-[#2E353A] mt-5">
-                <DropdownMenuLabel className="bg-primary/20 py-5 px-5 text-white flex items-center justify-between">
-                  <span className="text-base font-bold leading-tight">
-                    Notifications
+              <DropdownMenu className="bg-[#2E353A]">
+                <DropdownMenuTrigger className="relative focus-visible:ring-0">
+                  <img src={BellIcon} alt="icon" />
+                  <span className="bg-red-600 w-6 h-5 absolute block rounded-xl -top-2 -right-2 z-10 text-white text-sm font-medium">
+                    2
                   </span>
-                  <Switch />
-                </DropdownMenuLabel>
-                <DropdownMenuItem className="bg-[#2E353A] hover:!bg-[#2E353A]">
-                  <ScrollArea
-                    orientation="vertical"
-                    className="h-72 sm:w-[380px] w-[300px] rounded-none bg-[#2E353A] hover:!bg-[#2E353A] hover:shadow-none"
-                  >
-                    {notifications.map((notification, i) => (
-                      <div key={i}>
-                        <div className="flex gap-x-3 items-start py-3 px-3">
-                          <div className="bg-[#41B0FF20] w-[60px] h-[57px] flex items-center px-4 rounded-[10px]">
-                            <img src={BellIconBlue} alt="icon" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="p-0 bg-[#2E353A] mt-5">
+                  <DropdownMenuLabel className="bg-primary/20 py-5 px-5 text-white flex items-center justify-between">
+                    <span className="text-base font-bold leading-tight">
+                      Notifications
+                    </span>
+                    <Switch />
+                  </DropdownMenuLabel>
+                  <DropdownMenuItem className="bg-[#2E353A] hover:!bg-[#2E353A]">
+                    <ScrollArea
+                      orientation="vertical"
+                      className="h-72 sm:w-[380px] w-[300px] rounded-none bg-[#2E353A] hover:!bg-[#2E353A] hover:shadow-none"
+                    >
+                      {notifications.map((notification, i) => (
+                        <div key={i}>
+                          <div className="flex gap-x-3 items-start py-3 px-3">
+                            <div className="bg-[#41B0FF20] w-[60px] h-[57px] flex items-center px-4 rounded-[10px]">
+                              <img src={BellIconBlue} alt="icon" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-semibold leading-normal text-white mb-1">
+                                {notification}
+                              </p>
+                              <p className="text-xs font-medium leading-normal text-white/50">
+                                {++i} days ago
+                              </p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="text-sm font-semibold leading-normal text-white mb-1">
-                              {notification}
-                            </p>
-                            <p className="text-xs font-medium leading-normal text-white/50">
-                              {++i} days ago
-                            </p>
-                          </div>
+                          <Separator className="my-2 bg-[#A3A4B250]" />
                         </div>
-                        <Separator className="my-2 bg-[#A3A4B250]" />
-                      </div>
-                    ))}
-                  </ScrollArea>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <DropdownMenu className="bg-[#2E353A]">
-              <DropdownMenuTrigger className="relative flex items-center gap-x-3 focus-visible:ring-0">
-                <Avatar>
-                  <AvatarImage src={AvatarIcon} />
-                  <AvatarFallback>JP</AvatarFallback>
-                </Avatar>
-                <ChevronDownIcon className="text-white/50" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="p-0 bg-[#2E353A] mt-3">
-                <DropdownMenuLabel className="py-5 px-5 text-white flex gap-x-3 items-center justify-between">
+                      ))}
+                    </ScrollArea>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <DropdownMenu className="bg-[#2E353A]">
+                <DropdownMenuTrigger className="relative flex items-center gap-x-3 focus-visible:ring-0">
                   <Avatar>
                     <AvatarImage src={AvatarIcon} />
                     <AvatarFallback>JP</AvatarFallback>
                   </Avatar>
-                  <div className="">
-                    <h3 className="text-sm font-medium leading-tight mb-1">
-                      Justin Philips
-                    </h3>
-                    <p className="text-xs font-medium leading-tight text-white/50">
-                      justin_Philips@gmail.com
-                    </p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-[#A3A4B250]" />
-                <DropdownMenuItem className="text-white hover:!text-white py-3 px-5">
-                  <Link to="/dashboard" className="flex items-center gap-x-3">
-                    <img src={SettingIcon} alt="icon" />
-                    <span className="block text-sm font-medium leading-tight">
-                      Settings
-                    </span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-[#A3A4B250]" />
-                <DropdownMenuItem className="text-white hover:!text-white py-3 px-5">
-                  <Link to="/dashboard" className="flex items-center gap-x-3">
-                    <img src={PoliciesIcon} alt="icon" />
-                    <span className="block text-sm font-medium leading-tight">
-                      Policies
-                    </span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-[#A3A4B250]" />
-                <DropdownMenuItem className="text-white hover:!text-white py-3 px-5">
-                  <Link to="/dashboard" className="flex items-center gap-x-3">
-                    <img src={LogoutIcon} alt="icon" />
-                    <span className="block text-sm font-medium leading-tight">
-                      Logout
-                    </span>
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                  <ChevronDownIcon className="text-white/50" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="p-0 bg-[#2E353A] mt-3">
+                  <DropdownMenuLabel className="py-5 px-5 text-white flex gap-x-3 items-center justify-between">
+                    <Avatar>
+                      <AvatarImage src={AvatarIcon} />
+                      <AvatarFallback>JP</AvatarFallback>
+                    </Avatar>
+                    <div className="">
+                      <h3 className="text-sm font-medium leading-tight mb-1">
+                        Justin Philips
+                      </h3>
+                      <p className="text-xs font-medium leading-tight text-white/50">
+                        justin_Philips@gmail.com
+                      </p>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator className="bg-[#A3A4B250]" />
+                  <DropdownMenuItem className="text-white hover:!text-white py-3 px-5">
+                    <Link
+                      to="/dashboard/settings"
+                      className="flex items-center gap-x-3"
+                    >
+                      <img src={SettingIcon} alt="icon" />
+                      <span className="block text-sm font-medium leading-tight">
+                        Settings
+                      </span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator className="bg-[#A3A4B250]" />
+                  <DropdownMenuItem className="text-white hover:!text-white py-3 px-5">
+                    <Link
+                      to="/dashboard/policies"
+                      className="flex items-center gap-x-3"
+                    >
+                      <img src={PoliciesIcon} alt="icon" />
+                      <span className="block text-sm font-medium leading-tight">
+                        Policies
+                      </span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator className="bg-[#A3A4B250]" />
+                  <DropdownMenuItem className="text-white hover:!text-white py-3 px-5">
+                    <Link to="/login" className="flex items-center gap-x-3">
+                      <img src={LogoutIcon} alt="icon" />
+                      <span className="block text-sm font-medium leading-tight">
+                        Logout
+                      </span>
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>

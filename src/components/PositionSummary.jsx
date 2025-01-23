@@ -19,7 +19,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/ui"
+} from "@/components/ui/cnIndex"
 import { useState } from "react"
 
 const PositionSummary = () => {

@@ -3,7 +3,7 @@ import { useState } from "react"
 // React Router Dom
 import { Link } from "react-router-dom"
 // Components
-import { Button, Checkbox, Input, Label } from "@/components/ui"
+import { Button, Checkbox, Input, Label } from "@/components/ui/cnIndex"
 // Icons
 import { Eye, EyeClosed, LockKeyhole, User } from "lucide-react"
 // Media

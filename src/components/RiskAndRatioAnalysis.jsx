@@ -6,7 +6,7 @@ import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from "@/components/ui"
+} from "@/components/ui/cnIndex"
 // Icons
 import { Info } from "lucide-react"
 

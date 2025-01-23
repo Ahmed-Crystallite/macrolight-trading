@@ -13,7 +13,11 @@ import {
   ForgotPassword,
   Login,
   NotFound,
+  PaymentMethod,
+  Preferences,
+  Profile,
   Results,
+  Security,
   Signup,
   StrategyBuilder,
   Templates,
@@ -82,21 +86,24 @@ const routesConfig = [
         path: "settings",
         children: [
           {
-            path: "",
             index: true,
-            element: <div className="container">Profile Page</div>,
+            element: <Navigate to="profile" replace />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
           },
           {
             path: "preferences",
-            element: <div className="container">Preferences Page</div>,
+            element: <Preferences />,
           },
           {
             path: "security",
-            element: <div className="container">Security Page</div>,
+            element: <Security />,
           },
           {
             path: "payment-method",
-            element: <div className="container">Payment Method Page</div>,
+            element: <PaymentMethod />,
           },
         ],
       },
@@ -134,17 +141,17 @@ const routesConfig = [
   },
 ]
 
-// Recursive function to handle nested routes
 const renderRoutes = (routes) => {
-  return routes.map((route) => {
-    const { path, element, children, index } = route
+  return routes.map((route, index) => {
+    const { path, element, children } = route
     return (
-      <Route key={path} path={path} index={index} element={element}>
+      <Route key={`${path}-${index}`} path={path} element={element}>
         {children && renderRoutes(children)}
       </Route>
     )
   })
 }
+
 const Routers = () => {
   return (
     <Router>
