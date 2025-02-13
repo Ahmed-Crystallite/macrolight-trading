@@ -62,7 +62,7 @@ const RiskAndRatioAnalysis = () => {
                 <h4 className="text-base font-medium leading-tight">
                   {item.title}
                 </h4>
-                <TooltipProvider>
+                <TooltipProvider delayDuration={300}>
                   <Tooltip>
                     <TooltipTrigger>
                       <Info className="text-white/50" />

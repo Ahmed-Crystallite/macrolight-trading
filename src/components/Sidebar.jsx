@@ -1,5 +1,3 @@
-// Reacr
-import { useState } from "react"
 // React Router Dom
 import { NavLink } from "react-router-dom"
 // Media
@@ -17,7 +15,7 @@ import Icon5 from "media/dashboard/icons/5.svg"
 import Icon5Active from "media/dashboard/icons/5_blue.svg"
 import Icon6 from "media/dashboard/icons/6.svg"
 import Icon6Active from "media/dashboard/icons/6_blue.svg"
-export default function Sidebar() {
+export default function Sidebar({ isCollapsed, toggleAside }) {
   const links = [
     {
       href: "/dashboard",
@@ -58,11 +56,36 @@ export default function Sidebar() {
   ]
   return (
     <aside
-      className={`fixed overflow-y-auto xl:w-[300px] sm:w-[110px] w-[70px] bg-lightBlack border-r-2 border-[#424E56] h-screen xl:py-8 py-6 transition-all ease-in-out duration-300`}
+      className={`fixed overflow-y-auto ${
+        isCollapsed ? "w-[100px]" : "xl:w-[250px] sm:w-[100px] w-[70px]"
+      } bg-lightBlack border-r-2 border-[#424E56] h-screen xl:py-8 py-6 transition-all ease-in-out duration-300`}
     >
       <div className="container">
-        <img src={Logo} alt="logo" className="xl:block hidden" />
         <img src={Logo1} alt="logo" className="xl:hidden block mx-auto" />
+        <div className="flex items-center gap-x-3 justify-between">
+          <img
+            src={Logo}
+            alt="logo"
+            className={`${isCollapsed ? "hidden" : "xl:block"} hidden`}
+          />
+          <button className="xl:block hidden w-full" onClick={toggleAside}>
+            <span
+              className={`block w-[65%] rounded h-1 mb-2 bg-primary ${
+                isCollapsed ? "mx-auto" : "ms-auto"
+              }`}
+            ></span>
+            <span
+              className={`block w-[65%] rounded h-1 mb-2 bg-primary ${
+                isCollapsed ? "mx-auto" : "ms-auto"
+              }`}
+            ></span>
+            <span
+              className={`block w-[65%] rounded h-1 bg-primary ${
+                isCollapsed ? "mx-auto" : "ms-auto"
+              }`}
+            ></span>
+          </button>
+        </div>
         <div className="xl:mt-10 mt-7">
           <ul className="grid grid-cols-1 gap-y-3">
             {links?.map(({ href, activeIcon, icon, text }, i) => (
@@ -72,7 +95,7 @@ export default function Sidebar() {
                   to={href}
                   end
                   className={({ isActive }) =>
-                    `flex gap-x-3 group items-center xl:text-lg text-base font-medium sm:px-5 capitalize mb-1 sm:h-[70px] h-[40px] px-[6px] hover:bg-black hover:rounded-xl transition-all ease-in-out duration-300 ${
+                    `flex gap-x-3 group items-center xl:text-lg text-base font-medium sm:px-5 capitalize mb-1 sm:h-[50px] h-[40px] px-[6px] hover:bg-black hover:rounded-xl transition-all ease-in-out duration-300 ${
                       isActive
                         ? "text-primary rounded-[12px] bg-black w-[99%] m-auto"
                         : "text-white/65"
@@ -82,7 +105,7 @@ export default function Sidebar() {
                   {({ isActive }) => (
                     <>
                       <span
-                        className={`block w-full group-hover:bg-[linear-gradient(0deg,_rgba(0,119,204,1)_0%,_rgba(9,22,32,1)_100%)] sm:h-[72px] h-[42px] -z-10 rounded-[12px] absolute inset-0 transition-all ease-in-out duration-500  ${
+                        className={`block w-full group-hover:bg-[linear-gradient(0deg,_rgba(0,119,204,1)_0%,_rgba(9,22,32,1)_100%)] sm:h-[52px] h-[42px] -z-10 rounded-[12px] absolute inset-0 transition-all ease-in-out duration-500  ${
                           isActive
                             ? "bg-[linear-gradient(0deg,_rgba(0,119,204,1)_0%,_rgba(9,22,32,1)_100%)]"
                             : ""
@@ -97,7 +120,13 @@ export default function Sidebar() {
                       ) : (
                         <img src={icon} alt="icon" className="xl:m-0 mx-auto" />
                       )}
-                      <span className="xl:block hidden">{text}</span>
+                      <span
+                        className={`${
+                          isCollapsed ? "hidden" : "xl:block"
+                        } hidden `}
+                      >
+                        {text}
+                      </span>
                     </>
                   )}
                 </NavLink>
