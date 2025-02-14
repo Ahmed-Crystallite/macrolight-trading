@@ -57,7 +57,7 @@ export default function Sidebar({ isCollapsed, toggleAside }) {
   return (
     <aside
       className={`fixed overflow-y-auto ${
-        isCollapsed ? "w-[100px]" : "xl:w-[250px] sm:w-[100px] w-[70px]"
+        isCollapsed ? "sm:w-[100px]" : "xl:w-[250px] sm:w-[100px] w-[70px]"
       } bg-lightBlack border-r-2 border-[#424E56] h-screen xl:py-8 py-6 transition-all ease-in-out duration-300`}
     >
       <div className="container">

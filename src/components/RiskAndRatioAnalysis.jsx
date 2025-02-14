@@ -41,7 +41,7 @@ const RiskAndRatioAnalysis = () => {
     <div className="lg:col-span-6 col-span-12">
       <div className="bg-[#2E353A] py-[10px] px-[15px] rounded-[10px] h-full">
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-bold leading-tight">
+          <h2 className="sm:text-lg text-base font-bold leading-tight">
             Risk & Ratio Analysis
           </h2>
           <Link

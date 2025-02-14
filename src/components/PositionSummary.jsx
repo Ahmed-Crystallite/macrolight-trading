@@ -84,10 +84,10 @@ const PositionSummary = () => {
     <div className="lg:col-span-6 col-span-12">
       <div className="bg-[#2E353A] py-[10px] px-[15px] rounded-[10px] h-full">
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-bold leading-tight">Positions Summary</h2>
+          <h2 className="sm:text-lg text-base font-bold leading-tight">Positions Summary</h2>
           <Link
             to="/dashboard/trade-list"
-            className="bg-primary h-[34px] w-[120px] flex items-center justify-center rounded-[40px] text-sm font-semibold tracking-wide"
+            className="bg-primary h-[34px] sm:w-[120px] w-[90px] flex items-center justify-center rounded-[40px] text-sm font-semibold tracking-wide"
           >
             Trade List
           </Link>
@@ -167,7 +167,7 @@ const PositionSummary = () => {
           </TabsContent>
         </Tabs>
         <Pagination className="justify-end mt-4 rounded-xl">
-          <PaginationContent className="gap-0 rounded-xl">
+        <PaginationContent className="gap-0 flex-nowrap overflow-x-auto rounded-xl">
             <PaginationItem className="bg-transparent hover:!bg-transparent">
               <PaginationPrevious
                 onClick={() => handlePageChange(currentPage - 1)}

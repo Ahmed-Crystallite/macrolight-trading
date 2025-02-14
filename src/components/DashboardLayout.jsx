@@ -18,7 +18,7 @@ export default function DashboardLayout() {
       <article
         className={`${
           isAsideCollapsed
-            ? "w-[calc(100%-100px)]"
+            ? "sm:w-[calc(100%-100px)] w-[calc(100%-70px)]"
             : "xl:w-[calc(100%-250px)] sm:w-[calc(100%-100px)] w-[calc(100%-70px)]"
         } ms-auto overflow-y-auto bg-black text-white`}
       >

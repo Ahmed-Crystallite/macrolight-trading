@@ -143,7 +143,7 @@ export default function TradeList() {
           </Table>
 
           <Pagination className="justify-end mt-4 rounded-xl">
-            <PaginationContent className="gap-0 rounded-xl">
+            <PaginationContent className="gap-0 rounded-xl flex-nowrap overflow-x-auto">
               <PaginationItem className="bg-transparent hover:!bg-transparent">
                 <PaginationPrevious
                   onClick={() => handlePageChange(currentPage - 1)}

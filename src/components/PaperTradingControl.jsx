@@ -220,7 +220,7 @@ const PaperTradingControl = () => {
           <h2 className="text-lg font-bold leading-tight">
             Paper Trading Controls
           </h2>
-          <div className="flex items-center gap-x-2">
+          <div className="flex flex-nowrap overflow-x-auto items-center gap-x-2">
             {dialogActions.map((action, idx) => (
               <Dialog key={idx}>
                 <DialogTrigger asChild>
@@ -302,7 +302,7 @@ const PaperTradingControl = () => {
         </Table>
 
         <Pagination className="justify-end mt-4 rounded-xl">
-          <PaginationContent className="gap-0 rounded-xl">
+          <PaginationContent className="gap-0 flex-nowrap overflow-x-auto rounded-xl">
             <PaginationItem className="bg-transparent hover:!bg-transparent">
               <PaginationPrevious
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -318,7 +318,9 @@ const PaperTradingControl = () => {
                   href="javascript:;"
                   onClick={() => handlePageChange(i + 1)}
                   className={
-                    currentPage === i + 1 ? "text-white bg-primary font-semibold" : ""
+                    currentPage === i + 1
+                      ? "text-white bg-primary font-semibold"
+                      : ""
                   }
                 >
                   {i + 1}
